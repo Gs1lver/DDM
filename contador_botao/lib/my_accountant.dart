@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import 'contador.dart';
+
 class MyAccountant extends StatefulWidget {
   const MyAccountant({super.key});
 
@@ -13,6 +15,8 @@ class MyAccountantState extends State<MyAccountant> {
   int msgBtn = 0;
   int msgTxt = 0;
   
+  Contador cont = Contador();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +40,7 @@ class MyAccountantState extends State<MyAccountant> {
             children: [
               ElevatedButton(
                   onPressed: () {
-                    minusBtn();
+                    cont.subtrair();
                     setState(() {});
                   },
                   style: ElevatedButton.styleFrom(
@@ -53,12 +57,14 @@ class MyAccountantState extends State<MyAccountant> {
                       borderRadius: BorderRadius.circular(80)),
                     child: Padding(
                       padding: EdgeInsets.all(10),
-                      child: Text("$msgTxt")
+                      child: Text(
+                        cont.getContador().toString(),
+                        )
                   )),
 
                   ElevatedButton(
                   onPressed: () {
-                    plusBtn();
+                    cont.somar();
                     setState(() {});
                   },
                   style: ElevatedButton.styleFrom(
@@ -74,20 +80,11 @@ class MyAccountantState extends State<MyAccountant> {
             decoration: BoxDecoration(),
             child: Padding(
               padding: EdgeInsets.all(20),
-              child: Text("Valor do contador: $msgBtn"),
+              child: Text("Number on the counter: " + cont.getContador().toString()),
             ),
           )
         ]),
       ),
     );
-  }
-
-  void plusBtn() {
-    msgBtn++;
-    msgTxt++;
-  }
-  void minusBtn(){
-    msgBtn--;
-    msgTxt--;
   }
 }
