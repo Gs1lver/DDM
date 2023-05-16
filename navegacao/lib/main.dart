@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navegacao/favorite.dart';
 import 'package:navegacao/person.dart';
 
 import 'basket.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/' : (context) => MyHomePage(),
+        '/favorite' : (context) => Favorite(),
         '/basket' : (context) => Basket(),
         '/person' : (context) => Person()
       },
