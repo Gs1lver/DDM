@@ -30,6 +30,22 @@ class _MyHomeState extends State<MyHomePage>{
             icon: Icon(Icons.account_circle_rounded)
           ),
         ],  
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon (Icons.account_circle_rounded),
+            label: "Person",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon (Icons.shopping_cart_rounded),
+            label: "Basket",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon (Icons.favorite_rounded),
+            label: "Favorite",
+          ),
+        ]
       )
     );
   }
