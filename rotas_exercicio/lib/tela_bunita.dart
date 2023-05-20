@@ -1,39 +1,43 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables
 
-import 'package:exercicio_tela_bunita/myTextBox.dart';
 import 'package:flutter/material.dart';
+import 'package:rotas_exercicio/my_accountant.dart';
+import 'package:rotas_exercicio/sobre.dart';
 
-//eu te odeio vitor gabriel >:((((((((
-void main() {
-  runApp(const MyApp());
+import 'myTextBox.dart';
+
+class MyTelaBunita extends StatefulWidget {
+  const MyTelaBunita({super.key});
+
+  @override
+  State<MyTelaBunita> createState() => _MyTelaBunitaState();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class _MyTelaBunitaState extends State<MyTelaBunita>{
 
-  // This widget is the root of your application.
+  //atributo
+  int _indice = 0;
+
+  List<Widget> _telas = [
+    MyAccountant(),
+    AboutUs(),
+  ];
+
+  //metodo
+  void _itemClicado(int index){
+    setState(() {
+      _indice = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.red,
-          child: SizedBox(
-            height: 40,
-            child: Align(
-              child: Text ('Venha estudar conosco!', style: TextStyle(fontSize: 12, color: Colors.white)),)
-          )
-        ),
-        appBar: AppBar(
+    return Scaffold(
+      appBar: AppBar(
           title: Text("Bem vinde!"),
           backgroundColor: Colors.red,
           centerTitle: true,
         ),
-        body: Center(
+      body: Center(
           child: Column(
             // ignore: prefer_const_literals_to_create_immutables
             children: [
@@ -94,7 +98,6 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-      ),
     );
   }
 }
