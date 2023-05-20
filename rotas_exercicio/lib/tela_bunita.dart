@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:rotas_exercicio/my_accountant.dart';
@@ -18,6 +18,7 @@ class _MyTelaBunitaState extends State<MyTelaBunita> {
   int _indice = 0;
 
   List<Widget> _telas = [
+    MyTelaBunita(),
     MyAccountant(),
     AboutUs(),
   ];
@@ -48,7 +49,7 @@ class _MyTelaBunitaState extends State<MyTelaBunita> {
               icon: Icon(Icons.info_rounded)),
         ],
       ),
-      body: Center(
+      body: Container(
         child: SingleChildScrollView(
           child: Column(
             // ignore: prefer_const_literals_to_create_immutables
