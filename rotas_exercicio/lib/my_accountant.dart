@@ -22,11 +22,16 @@ class MyAccountantState extends State<MyAccountant> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Contador'),
+        backgroundColor: Colors.red,
+        centerTitle: true,
+      ),
       backgroundColor: Colors.red[100],
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Image.network(
-              'https://cdn-icons-png.flaticon.com/512/1552/1552545.png',
+              'https://cdn-icons-png.flaticon.com/128/1011/1011812.png',
               width: 100,
               height: 100),
           SizedBox(height: 2),
