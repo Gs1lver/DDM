@@ -1,6 +1,3 @@
-import 'package:exercicio_controller/calculos.dart';
-import 'package:exercicio_controller/home_page.dart';
-import 'package:exercicio_controller/nothing.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,11 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      routes: {
-        '/':(context) => Home(),
-        '/nothing': (context) => Nothing(),
-        'calculos': (context) => Calculos()
-      }
+      
     );
   }
 }
