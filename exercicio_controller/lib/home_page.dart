@@ -1,33 +1,13 @@
-import 'package:exercicio_controller/calculos.dart';
-import 'package:exercicio_controller/nothing.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({super.key});
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  int _indice = 0;
-  
-  List<Widget> _telas = [
-    Nothing(),
-    Calculos()
-  ];
-
-  void _itemClicado(int index){
-    setState(() {
-      _indice = index;
-    });
-  }
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: Text("Operações e Conversões"),
         actions: [
           IconButton(
             onPressed: (){
@@ -37,7 +17,9 @@ class _HomeState extends State<Home> {
           )
         ],  
       ),
-      body: _telas[_indice]
+      body: const Center(
+        child: Text('Hello World'),
+      )
     );
   }
 }
