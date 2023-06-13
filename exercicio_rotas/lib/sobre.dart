@@ -45,7 +45,7 @@ class _AboutUsState extends State<AboutUs> {
               CircleAvatar(
                 radius: 48,
                 backgroundImage: NetworkImage(
-                    "https://pps.whatsapp.net/v/t61.24694-24/316485045_1244927223101006_1150106875316726973_n.jpg?ccb=11-4&oh=01_AdQs5teJK_T3BjlCkpg0Xgc9m3EIzGdG7qwolNG_CHPLSQ&oe=64762874"),
+                    "https://pps.whatsapp.net/v/t61.24694-24/350727625_216143564576313_3079309701598520354_n.jpg?ccb=11-4&oh=01_AdSpQJjJFTljlYW5vkfHydufI1oN2wE1nCnQqZ4kNoLR0g&oe=64955445"),
               ),
               Padding(
                 padding: EdgeInsets.all(20.0),
