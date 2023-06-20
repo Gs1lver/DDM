@@ -23,9 +23,15 @@ class _MyCadastroState extends State<MyCadastro> {
         child: Column(
           children: [
             TextField(
+              decoration: const InputDecoration(
+                labelText: "RA"
+              ),
               controller: campoRa,
             ),
             TextField(
+              decoration: const InputDecoration(
+                labelText: "Nome"
+              ),
               controller: campoNome,
             ),
             ElevatedButton(
