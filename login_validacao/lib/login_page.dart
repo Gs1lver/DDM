@@ -19,7 +19,9 @@ class LoginPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('Oi'),
+              SizedBox(height: 20,),
+              Image.network("https://cdn-icons-png.flaticon.com/512/181/181534.png", width: 200, height: 200),
+              const Text("Log-In", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
               Form(
                 key: formKey,
                 child: Padding(
@@ -83,12 +85,7 @@ class LoginPage extends StatelessWidget {
                   }
                 }, 
                 child: const Text("Entrar"),
-                ),
-              ElevatedButton(
-                onPressed: (){
-                  mostrarUser();
-                }, 
-                child: const Text("teste"))
+                )
             ],
           ),
         ),
