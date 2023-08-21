@@ -12,17 +12,9 @@ class HomePage extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        bottomNavigationBar: BottomAppBar(
-            color: Colors.red,
-            child: SizedBox(
-                height: 40,
-                child: Align(
-                  child: Text('Venha estudar conosco!',
-                      style: TextStyle(fontSize: 12, color: Colors.white)),
-                ))),
         appBar: AppBar(
-          title: Text("Bem vinde!"),
-          backgroundColor: Colors.red,
+          title: Text("Bem vinde!", style: TextStyle(color: Colors.white)),
+          backgroundColor: Colors.black,
           centerTitle: true,
         ),
         body: Center(
@@ -55,7 +47,7 @@ class HomePage extends StatelessWidget {
                           'https://cdn-icons-png.flaticon.com/512/5709/5709755.png')),
                   Align(
                     alignment: Alignment.center,
-                    child: MyTextBox("Conceitos básicos de Linguagem Dart"),
+                    child: MyTextBox("Tristeza"),
                   ),
                 ],
               ),
@@ -67,7 +59,7 @@ class HomePage extends StatelessWidget {
                           'https://cdn-icons-png.flaticon.com/512/5709/5709755.png')),
                   Align(
                     alignment: Alignment.center,
-                    child: MyTextBox("Stateless e Stateful Widgets"),
+                    child: MyTextBox("Flutter"),
                   ),
                 ],
               ),
@@ -79,7 +71,7 @@ class HomePage extends StatelessWidget {
                           'https://cdn-icons-png.flaticon.com/512/5709/5709755.png')),
                   Align(
                     alignment: Alignment.center,
-                    child: MyTextBox("Exemplos práticos"),
+                    child: MyTextBox("Ajuda de indianos"),
                   ),
                 ],
               )

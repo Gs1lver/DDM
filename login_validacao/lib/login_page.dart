@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:login_validacao/home_page.dart';
+import 'package:login_validacao/classes/user.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    String nome = "";
-    String senha = "";
+    List<User> users = [
+      User(nome: "lisa", senha: "12345"),
+      User(nome: "tbasso", senha: "0708"),
+      User(nome: "gs1lver", senha: "6789")
+    ];
+    
+    String nomeF = "";
+    String senhaF = "";
     TextEditingController campoNome = TextEditingController();
     TextEditingController campoSenha = TextEditingController();
     GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -78,12 +85,16 @@ class LoginPage extends StatelessWidget {
 
               ElevatedButton(   
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
-                  /*if (formKey.currentState!.validate()) {
-                    senha = campoSenha.text;
-                    nome = campoNome.text;
+                  if (formKey.currentState!.validate()) {
+                    senhaF = campoSenha.text;
+                    nomeF = campoNome.text;
+                    if(users.any((element) => element.nome == nomeF && element.senha == senhaF)){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
+                    }else{
+                      const Text("Usuário ou senha incorretos");
+                    }
                     //metodo verificar na lista do repository
-                  }*/
+                  }
                 }, 
                 child: const Text("Entrar"),
                 )

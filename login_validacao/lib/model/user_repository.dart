@@ -2,21 +2,11 @@ import 'package:login_validacao/classes/user.dart';
 
 class UserRepository{
 
-  List<User> _listaUsers = [];
+  List<User> users = [
+    User(nome: "lisa", senha: "12345"),
+    User(nome: "tbasso", senha: "0708"),
+    User(nome: "gs1lver", senha: "6789")
+  ];
 
-  //construtor
-  UserRepository(){
-    this._listaUsers = [
-      User('isabela', 'isa123'),
-      User('luanna', 'lua123'),
-    ];
-  }
-
-  void mostrarUser(){
-    _listaUsers.forEach((User user) => print(user));
-  }
-
-  void verificar(User user){
-    
-  }
+  UserRepository(this.users);
 }

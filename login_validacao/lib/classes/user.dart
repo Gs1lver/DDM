@@ -1,15 +1,8 @@
 class User{
 
-  String _senha = "";
-  String _nome = "";
+  String senha;
+  String nome;
 
   //construtor
-  User(this._nome, this._senha);
-
-  //getters e setters
-  get senha => this.senha;
-  set senha(value) => this._senha = value;
-
-  get nome => this.nome;
-  set nome(value) => this._nome = value;
+  User({required this.nome, required this.senha});
 }
