@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:login_validacao/model/user_repository.dart';
+import 'package:login_validacao/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -32,7 +31,7 @@ class LoginPage extends StatelessWidget {
                         controller: campoNome,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return ("O RA não pode ser vazio");
+                            return ("Nome não pode ser vazio");
                           }
                           return null;
                         },
@@ -51,11 +50,12 @@ class LoginPage extends StatelessWidget {
 
                       TextFormField(
                         controller: campoSenha,
+                        obscureText: true,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return ("O RA não pode ser vazio");
+                            return ("Senha não pode ser vazio");
                           } else {
-                            if (campoSenha.text.length < 3) {
+                            if (campoSenha.text.length < 4) {
                               return ("A senha deve conter mais que 3 caracteres");
                             }
                           }
@@ -78,11 +78,12 @@ class LoginPage extends StatelessWidget {
 
               ElevatedButton(   
                 onPressed: () {
-                  if (formKey.currentState!.validate()) {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
+                  /*if (formKey.currentState!.validate()) {
                     senha = campoSenha.text;
                     nome = campoNome.text;
                     //metodo verificar na lista do repository
-                  }
+                  }*/
                 }, 
                 child: const Text("Entrar"),
                 )
