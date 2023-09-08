@@ -8,14 +8,23 @@ class CadastroPage extends StatefulWidget {
 }
 
 class _CadastroPageState extends State<CadastroPage> {
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
-        title: const Text("Cadastro de Aluno"),
-        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.person))],
+        backgroundColor: Colors.red[800],
+        title: const Text("Cadastro de Pets"),
+        actions: [
+          IconButton(onPressed: () {
+          Navigator.pushNamed(context, "/lista");
+        },
+        icon: const Icon(Icons.list_alt_sharp))],
       ),
       body: SingleChildScrollView(
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -23,7 +32,7 @@ class _CadastroPageState extends State<CadastroPage> {
             //imagem
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Icon(Icons.person_add, size: 100, color: Colors.red[800])
+              child: Icon(Icons.pets, size: 100, color: Colors.red[800])
             ),
       
             //cadastro
@@ -37,7 +46,7 @@ class _CadastroPageState extends State<CadastroPage> {
                       TextFormField(
                         decoration: const InputDecoration(
                             labelText: "Nome",
-                            hintText: "Digite o nome do aluno",
+                            hintText: "Digite o nome do seu pet",
                             hintStyle: TextStyle(color: Colors.grey),
                             border: OutlineInputBorder(
                                 borderRadius:
@@ -48,8 +57,8 @@ class _CadastroPageState extends State<CadastroPage> {
                       ),
                       TextFormField(
                         decoration: const InputDecoration(
-                            labelText: "RA",
-                            hintText: "Digite o RA do aluno",
+                            labelText: "ID",
+                            hintText: "Digite o id do pet",
                             hintStyle: TextStyle(color: Colors.grey),
                             border: OutlineInputBorder(
                                 borderRadius:
@@ -60,7 +69,7 @@ class _CadastroPageState extends State<CadastroPage> {
                 ),
               ),
             ),
-            ElevatedButton.icon(onPressed: (){}, label: const Text("Cadastrar Aluno"), icon: const Icon(Icons.add),)
+            ElevatedButton.icon(onPressed: (){}, label: const Text("Cadastrar Pet"), icon: const Icon(Icons.add),)
           ],
         ),
       ),

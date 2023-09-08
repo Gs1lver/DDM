@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 
-class ListaAlunosPage extends StatefulWidget {
-  const ListaAlunosPage({super.key});
+class ListaPetsPage extends StatefulWidget {
+  const ListaPetsPage({super.key});
 
   @override
-  State<ListaAlunosPage> createState() => _ListaAlunosPageState();
+  State<ListaPetsPage> createState() => _ListaPetsPageState();
 }
 
-class _ListaAlunosPageState extends State<ListaAlunosPage> {
-
-
+class _ListaPetsPageState extends State<ListaPetsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Alunos"),
+        title: const Text("Pets Cadastrados"),
         centerTitle: true,
       ),
       // body: ListView.separated(

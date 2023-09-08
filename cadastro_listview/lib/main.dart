@@ -1,5 +1,5 @@
 import 'package:cadastro_listview/view/cadastro_page.dart';
-import 'package:cadastro_listview/view/lista_alunos_page.dart';
+import 'package:cadastro_listview/view/lista_pets_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,10 +19,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
-      routes: 
-      {
+      routes: {
         "/": (context) => const CadastroPage(),
-        "/lista": (context) => const ListaAlunosPage(),
+        "/lista": (context) => const ListaPetsPage(),
       },
     );
   }
