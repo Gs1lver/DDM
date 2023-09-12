@@ -1,4 +1,3 @@
-
 import 'package:cadastro_listview/controller/pet_repository.dart';
 import 'package:flutter/material.dart';
 
@@ -10,17 +9,19 @@ class ListaPetsPage extends StatefulWidget {
 }
 
 class _ListaPetsPageState extends State<ListaPetsPage> {
-
   final listaPets = PetRepository.getListaPets;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Pets Cadastrados"),
-          centerTitle: true,
-        ),
-        body: ListView.separated(
+      appBar: AppBar(
+        title: const Text("Pets Cadastrados"),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          ListView.separated(
+            shrinkWrap: true, //mais adequado pra esse exemplo
             itemCount: listaPets.length,
             separatorBuilder: ((context, index) => const Divider(
                   thickness: 2,
@@ -38,6 +39,19 @@ class _ListaPetsPageState extends State<ListaPetsPage> {
                   icon: const Icon(Icons.delete),
                 ),
               );
-            })));
+            }),
+          ),
+          Divider(
+            thickness: 2,
+          ),
+          ElevatedButton(
+            child: Text("Voltar"),
+            onPressed: () {
+              Navigator.pop(context); //bruh
+            },
+          )
+        ],
+      ),
+    );
   }
 }
