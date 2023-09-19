@@ -1,4 +1,6 @@
+import 'package:cadastro_listview/controller/altera_pet.dart';
 import 'package:cadastro_listview/controller/pet_repository.dart';
+import 'package:cadastro_listview/model/pet.dart';
 import 'package:flutter/material.dart';
 
 class ListaPetsPage extends StatefulWidget {
@@ -34,10 +36,33 @@ class _ListaPetsPageState extends State<ListaPetsPage> {
                 ),
                 title: Text(listaPets[index].name),
                 subtitle: Text(listaPets[index].cuidador),
-                trailing: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.delete),
-                ),
+                trailing: SizedBox(
+                  width: 60,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: IconButton(
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return AlteraPet(pet: listaPets[index], indice: index);
+                            }));
+                          },
+                          icon: const Icon(Icons.edit)
+                        ),
+                      ),
+                      Expanded(
+                        child: IconButton(
+                          onPressed: (){
+                            Pet pet = listaPets[index];
+                            PetRepository.removerPet(pet);
+                            setState(() {});
+                          },
+                          icon: const Icon(Icons.delete)
+                        ),
+                      ),
+                    ],
+                  ),
+                )
               );
             }),
           ),

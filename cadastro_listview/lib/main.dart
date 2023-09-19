@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "/": (context) => const CadastroPage(),
-        "/lista": (context) => const ListaPetsPage(),
+        "/lista": (context) => const ListaPetsPage()
       },
     );
   }
