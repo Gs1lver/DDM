@@ -9,7 +9,7 @@ class PetRepository {
   ];
 
   //getters e setters
-  static get getListaPets => _listaPets;
+  static List<Pet> get getListaPets => _listaPets;
   set listaPets(value) => _listaPets = value;
 
   //métodos

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class AlteraPet extends StatefulWidget {
   Pet pet;
   int indice;
-  
+
   AlteraPet({required this.pet, required this.indice, super.key});
 
   @override
@@ -20,12 +20,12 @@ class _AlteraPetState extends State<AlteraPet> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String texto_sucesso = "";
 
-  void inicializa(){
+  void inicializa() {
     _nomeController.text = widget.pet.name;
     _cuidadorController.text = widget.pet.cuidador;
   }
 
-  void msgSucesso(){
+  void msgSucesso() {
     texto_sucesso = "Pet alterado!";
   }
 
@@ -38,16 +38,22 @@ class _AlteraPetState extends State<AlteraPet> {
         centerTitle: true,
       ),
       body: Center(
-        child: Column(
-          children: [
-            Padding(padding: const EdgeInsets.all(16.0), child: Icon(Icons.pets, size: 100,)),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Form(
-                key: _formKey,
-                child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 16),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Icon(
+                    Icons.pets,
+                    size: 100,
+                  )),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Form(
+                  key: _formKey,
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
                     child: Column(
                       children: [
                         TextFormField(
@@ -94,34 +100,34 @@ class _AlteraPetState extends State<AlteraPet> {
                       ],
                     ),
                   ),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: (){
-                    if(_formKey.currentState!.validate()){
-                      String nome = _nomeController.text;
-                      String cuidador = _cuidadorController.text;
-                      Pet a = new Pet(name: nome, cuidador: cuidador);
-                      listaPets[widget.indice]= a;
-                      Navigator.pushNamed(context, "/lista");
-                    }
-                  }, 
-                  child: Text("Alterar")
                 ),
-                Padding(padding: EdgeInsets.all(4.0)),
-                ElevatedButton(
-                  onPressed: (){
-                    Navigator.pop(context);
-                  }, 
-                  child: Text("Voltar")
-                )
-              ],
-            ),
-            Text(texto_sucesso, style: TextStyle(color: Colors.red, fontSize: 10))
-          ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          String nome = _nomeController.text;
+                          String cuidador = _cuidadorController.text;
+                          Pet a = new Pet(name: nome, cuidador: cuidador);
+                          listaPets[widget.indice] = a;
+                          Navigator.pushNamed(context, "/lista");
+                        }
+                      },
+                      child: Text("Alterar")),
+                  Padding(padding: EdgeInsets.all(4.0)),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text("Voltar"))
+                ],
+              ),
+              Text(texto_sucesso,
+                  style: TextStyle(color: Colors.red, fontSize: 10))
+            ],
+          ),
         ),
       ),
     );
