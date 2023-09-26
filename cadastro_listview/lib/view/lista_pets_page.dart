@@ -13,6 +13,7 @@ class ListaPetsPage extends StatefulWidget {
 class _ListaPetsPageState extends State<ListaPetsPage> {
   final listaPets = PetRepository.getListaPets;
   List<Pet> listaBusca = [];
+  final nomeBusca = "";
 
 @override
   void initState() {
@@ -92,6 +93,7 @@ void atualizaLista(String nome){
                                   Pet pet = listaPets[index];
                                   setState(() {
                                     PetRepository.removerPet(pet);
+                                    atualizaLista(nomeBusca);
                                   });
                                 },
                                 icon: const Icon(Icons.delete)),
