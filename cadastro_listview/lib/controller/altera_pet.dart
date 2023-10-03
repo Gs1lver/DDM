@@ -112,7 +112,7 @@ class _AlteraPetState extends State<AlteraPet> {
                           String cuidador = _cuidadorController.text;
                           Pet a = new Pet(name: nome, cuidador: cuidador);
                           listaPets[widget.indice] = a;
-                          Navigator.pushNamed(context, "/lista");
+                          Navigator.pop(context);
                         }
                       },
                       child: Text("Alterar")),
